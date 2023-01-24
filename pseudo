@@ -1,6 +1,1 @@
-Player inputs a choice 
-
-checks the selected random computer choice 
-
-if it's the same = tie 
-
+Every iteration, Prompt, ask the user, and print the result
