@@ -81,9 +81,22 @@ function gameOneToFive (result) {
 
 }
 
+console.log(`Your score: ${playerScore}; computer: ${computerScore}`);
+
+
+if (playerScore > computerScore) {
+    console.log("Congrats! You win!")
+} else if (playerScore === computerScore) {
+    console.log("It\'s a tie!")
+} else {
+    console.log("Too bad, computer was better than you. Coz you suck")
+}
+
 
     
 }
 
 gameOneToFive();
+
+
 
