@@ -26,29 +26,35 @@ function computerSelection () {
 
 function play (playerSelection, computerSelection) {
     if (playerSelection == 'rock' && computerSelection == 'rock') {
-        console.log(`It's a tie! player picked rock and computer picked rock as well`)
-    } else if (playerSelection == 'paper' && computerSelection == 'paper') {
-        console.log(`It's a tie! player picked paper and computer picked paper as well!`) 
-    } else if (playerSelection == 'scissors' && computerSelection == 'scissors')
+        return "It's a tie! player picked rock and computer picked rock as well";
+    } 
+    else if (playerSelection == 'paper' && computerSelection == 'paper') {
+        return `It's a tie! player picked paper and computer picked paper as well!`;
+
+    } 
+    else if (playerSelection == 'scissors' && computerSelection == 'scissors')
      {
-        console.log(`It's a tie! plyaer picked scissors and computer picked scissors`)
+        return `It's a tie! plyaer picked scissors and computer picked scissors`;
 
 
 
     } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
-        console.log(`You win! rock beats scissor`) 
+        return `You win! rock beats scissor`;
 
     } else if (playerSelection == 'scissors' && computerSelection =='rock') {
-        console.log("You lose. rock beats scissor") 
+        return "You lose. rock beats scissor";
 
-    } else if (playerSelection == 'paper' && computerSelection == 'rock') { 
-        console.log("You win! paper beats rock")
-    } else if (playerSelection == 'rock' && computerSelection == 'paper') {
-        console.log(`You lose. paper beats rock`)
-    } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-        console.log(`You win! scissors beat paper`)
+    } 
+    else if (playerSelection == 'paper' && computerSelection == 'rock') { 
+        return "You win! paper beats rock";
+    } 
+    else if (playerSelection == 'rock' && computerSelection == 'paper') {
+        return `You lose. paper beats rock`;
+    } 
+    else if (playerSelection == 'scissors' && computerSelection == 'paper') {
+        return`You win! scissors beat paper`;
     } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-        console.log(`You lose. scissors beat paper`)
+        return `You lose. scissors beat paper`;
     } 
 
 }
