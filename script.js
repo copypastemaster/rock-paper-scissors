@@ -60,26 +60,26 @@ function play (playerSelection, computerSelection) {
 }
 
 
-function gameOneToFive (result) {
-    let playerScore = 0;
-    let computerScore = 0;
+// function gameOneToFive (result) {
+//     let playerScore = 0;
+//     let computerScore = 0;
 
     
 
-   for (let i = 0; i <5; i++) {
-    let a = prompt("What\'s your pick?") 
-    let b = (play(playerSelection(a), computerSelection()))
+//    for (let i = 0; i <5; i++) {
+//     let a = prompt("What\'s your pick?") 
+//     let b = (play(playerSelection(a), computerSelection()))
      
-    if (b.includes("win")) {
-        playerScore++
-        console.log(`player: ${playerScore}`);
-    } else if (b.includes("lose")) {
-        computerScore++
-        console.log(`computer: ${computerScore}`);
-    }
-    console.log(b);
+//     if (b.includes("win")) {
+//         playerScore++
+//         console.log(`player: ${playerScore}`);
+//     } else if (b.includes("lose")) {
+//         computerScore++
+//         console.log(`computer: ${computerScore}`);
+//     }
+//     console.log(b);
 
-}
+// }
 
 console.log(`Your score: ${playerScore}; computer: ${computerScore}`);
 
