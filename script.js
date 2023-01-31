@@ -2,8 +2,15 @@ const values = ['rock', 'paper', 'scissors'];
 const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
 const scissors = document.querySelector('.scissors');
-const buttons = document.querySelectorAll('button');
 const div = document.querySelector('#container');
+const reset = document.querySelector('.reset');
+
+let scoreContainer = document.createElement('div');
+document.body.appendChild(scoreContainer);
+scoreContainer.style.cssText = 'text-align: center; font-size: 22px; margin-top: 7%;'
+
+let playerScore = 0;
+let computerScore = 0;
 
 
 
@@ -13,68 +20,137 @@ function computerSelection () {
     return values[random];
 }
 
-let playerScore = 0;
-let computerScore = 0;
 
 
 
-rock.addEventListener('click', () => { 
+function rockButton () {
+    
     let but = rock.textContent;
     let computerChoice = computerSelection();
+    
 
     if (but == computerChoice) {
-        console.log('Tie, you both picked rock');
-        console.log(`Your score is: ${playerScore}, computer is: ${computerScore}`);
+        scoreContainer.textContent = `Tie! Your score is: ${playerScore}, Computer: ${computerScore}`
+        if (playerScore == 5) {
+            return scoreContainer.textContent = 'YOU WIN!!!'
+        } else if (computerScore == 5) {
+            return scoreContainer.textContent = 'YOU LOSE! :('
+        }
+        return scoreContainer;
+
+
     } else if (computerChoice == 'paper') {
-        console.log('You lose, computer picke paper');
-        console.log(`Your score is: ${playerScore}, computer is: ${computerScore}`);
-        return computerScore++;
+        computerScore++
+        scoreContainer.textContent = `Your score is: ${playerScore}, Computer: ${computerScore}`
+        if (playerScore == 5) {
+            return scoreContainer.textContent = 'YOU WIN!!!'
+        } else if (computerScore == 5) {
+            return scoreContainer.textContent = 'YOU LOSE! :('
+        }
+        return computerScore;
+
+
     } else if (computerChoice == 'scissors') {
-        console.log('You win! computer picked scissors');
-        console.log(`Your score is: ${playerScore}, computer is: ${computerScore}`);
-        return playerScore++;
+        playerScore++
+        scoreContainer.textContent = `Your score is: ${playerScore}, Computer: ${computerScore}`
+        if (playerScore == 5) {
+            return scoreContainer.textContent = 'YOU WIN!!!'
+        } else if (computerScore == 5) {
+            return scoreContainer.textContent = 'YOU LOSE! :('
+        }
+        return playerScore;
     }
-   
-})
+
+}
 
 
-paper.addEventListener('click', () => {
+
+
+function paperButton () {
     let but = paper.textContent;
     let computerChoice = computerSelection();
 
     if (but == computerChoice) {
-        console.log('Tie, you both picked paper');
-        console.log(`Your score is: ${playerScore}, computer is: ${computerScore}`);
+        scoreContainer.textContent = `Tie!`
+        scoreContainer.textContent = `Tie! Your score is: ${playerScore}, Computer: ${computerScore}`
+        return scoreContainer;
+
+
     } else if (computerChoice == 'rock') {
-        console.log('You win!, computer picked rock');
-        console.log(`Your score is: ${playerScore}, computer is: ${computerScore}`);
-        return playerScore++;
+        playerScore++
+        scoreContainer.textContent = `Your score is: ${playerScore}, Computer: ${computerScore}`
+        if (playerScore == 5) {
+            return scoreContainer.textContent = 'YOU WIN!!!'
+        } else if (computerScore == 5) {
+            return scoreContainer.textContent = 'YOU LOSE! :('
+        }
+        return playerScore;
+
+
     } else if (computerChoice == 'scissors') {
-        console.log('You lose, computer picked scissors');
-        console.log(`Your score is: ${playerScore}, computer is: ${computerScore}`);
-        return computerScore++;
-    }
-})
+        computerScore++
+        scoreContainer.textContent = `Your score is: ${playerScore}, Computer: ${computerScore}`
+        if (playerScore == 5) {
+            return scoreContainer.textContent = 'YOU WIN!!!'
+        } else if (computerScore == 5) {
+            return scoreContainer.textContent = 'YOU LOSE! :('
+        }
+        return computerScore;
+    } 
+
+}
 
 
-scissors.addEventListener('click', () => {
+
+
+function scissorsButton () {
     let but = scissors.textContent;
     let computerChoice = computerSelection();
 
     if (but == computerChoice) {
-        console.log('Tie, you both picked scissors');
-        console.log(`Your score is: ${playerScore}, computer is: ${computerScore}`);
+        scoreContainer.textContent = `Tie! Your score is: ${playerScore}, Computer: ${computerScore}`
+        return scoreContainer;
+
+
     } else if (computerChoice == 'paper') {
-        console.log('You win! computer picked paper');
-        console.log(`Your score is: ${playerScore}, computer is: ${computerScore}`);
-        return playerScore++;
-    } else if (computerChoice == 'rock') {
-        console.log('You lose, computer picked rock');
-        console.log(`Your score is: ${playerScore}, computer is: ${computerScore}`);
-        return computerScore++;
+        playerScore++
+        scoreContainer.textContent = `Your score is: ${playerScore}, Computer: ${computerScore}`
+        if (playerScore == 5) {
+            return scoreContainer.textContent = 'YOU WIN!!!'
+        } else if (computerScore == 5) {
+            return scoreContainer.textContent = 'YOU LOSE! :('
+        }
+        return playerScore;
+    } 
+    
+        else if (computerChoice == 'rock') {
+        computerScore++
+        scoreContainer.textContent = `Your score is: ${playerScore}, Computer: ${computerScore}`
+        if (playerScore == 5) {
+            return scoreContainer.textContent = 'YOU WIN!!!'
+        } else if (computerScore == 5) {
+            return scoreContainer.textContent = 'YOU LOSE! :('
+        }
+        return computerScore;
     }
-})
+
+}
 
 
+
+
+
+function play () {
+    rock.addEventListener('click', rockButton);
+    paper.addEventListener('click', paperButton);
+    scissors.addEventListener('click', scissorsButton);
+    reset.addEventListener('click', () => {
+        playerScore = 0;
+        computerScore = 0;
+        scoreContainer.textContent = '';
+    })
+}
+
+play();
 
 

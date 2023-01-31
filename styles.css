@@ -1,0 +1,11 @@
+#container {
+    margin-top: 15%;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+#container button {
+    flex-basis: 300px;
+    font-size: 35px;
+}
