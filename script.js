@@ -31,11 +31,6 @@ function rockButton () {
 
     if (but == computerChoice) {
         scoreContainer.textContent = `Tie! Your score is: ${playerScore}, Computer: ${computerScore}`
-        if (playerScore == 5) {
-            return scoreContainer.textContent = 'YOU WIN!!!'
-        } else if (computerScore == 5) {
-            return scoreContainer.textContent = 'YOU LOSE! :('
-        }
         return scoreContainer;
 
 
@@ -43,8 +38,12 @@ function rockButton () {
         computerScore++
         scoreContainer.textContent = `Your score is: ${playerScore}, Computer: ${computerScore}`
         if (playerScore == 5) {
+            playerScore = 0;
+            computerScore = 0;
             return scoreContainer.textContent = 'YOU WIN!!!'
         } else if (computerScore == 5) {
+            playerScore = 0;
+            computerScore = 0;
             return scoreContainer.textContent = 'YOU LOSE! :('
         }
         return computerScore;
@@ -54,8 +53,12 @@ function rockButton () {
         playerScore++
         scoreContainer.textContent = `Your score is: ${playerScore}, Computer: ${computerScore}`
         if (playerScore == 5) {
+            playerScore = 0;
+            computerScore = 0;
             return scoreContainer.textContent = 'YOU WIN!!!'
         } else if (computerScore == 5) {
+            playerScore = 0;
+            computerScore = 0;
             return scoreContainer.textContent = 'YOU LOSE! :('
         }
         return playerScore;
@@ -71,7 +74,6 @@ function paperButton () {
     let computerChoice = computerSelection();
 
     if (but == computerChoice) {
-        scoreContainer.textContent = `Tie!`
         scoreContainer.textContent = `Tie! Your score is: ${playerScore}, Computer: ${computerScore}`
         return scoreContainer;
 
@@ -80,8 +82,12 @@ function paperButton () {
         playerScore++
         scoreContainer.textContent = `Your score is: ${playerScore}, Computer: ${computerScore}`
         if (playerScore == 5) {
+            playerScore = 0;
+            computerScore = 0;
             return scoreContainer.textContent = 'YOU WIN!!!'
         } else if (computerScore == 5) {
+            playerScore = 0;
+            computerScore = 0;
             return scoreContainer.textContent = 'YOU LOSE! :('
         }
         return playerScore;
@@ -91,8 +97,12 @@ function paperButton () {
         computerScore++
         scoreContainer.textContent = `Your score is: ${playerScore}, Computer: ${computerScore}`
         if (playerScore == 5) {
+            playerScore = 0;
+            computerScore = 0;
             return scoreContainer.textContent = 'YOU WIN!!!'
         } else if (computerScore == 5) {
+            playerScore = 0;
+            computerScore = 0;
             return scoreContainer.textContent = 'YOU LOSE! :('
         }
         return computerScore;
@@ -116,8 +126,12 @@ function scissorsButton () {
         playerScore++
         scoreContainer.textContent = `Your score is: ${playerScore}, Computer: ${computerScore}`
         if (playerScore == 5) {
+            playerScore = 0;
+            computerScore = 0;
             return scoreContainer.textContent = 'YOU WIN!!!'
         } else if (computerScore == 5) {
+            playerScore = 0;
+            computerScore = 0;
             return scoreContainer.textContent = 'YOU LOSE! :('
         }
         return playerScore;
@@ -127,8 +141,12 @@ function scissorsButton () {
         computerScore++
         scoreContainer.textContent = `Your score is: ${playerScore}, Computer: ${computerScore}`
         if (playerScore == 5) {
+            playerScore = 0;
+            computerScore = 0;
             return scoreContainer.textContent = 'YOU WIN!!!'
         } else if (computerScore == 5) {
+            playerScore = 0;
+            computerScore = 0;
             return scoreContainer.textContent = 'YOU LOSE! :('
         }
         return computerScore;
