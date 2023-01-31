@@ -1,1 +1,3 @@
-Every iteration, Prompt, ask the user, and print the result
+User clicks on a button; either rock, paper, or scissors.
+An eventlistener should fire up
+Appending the result on a new div

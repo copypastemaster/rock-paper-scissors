@@ -1,21 +1,11 @@
 const values = ['rock', 'paper', 'scissors'];
-
-function playerSelection (playerChoice) {
-
-    if (playerChoice == 'rock') {
-        return playerChoice
-    } else if (playerChoice == 'paper') {
-        return playerChoice
-    } else if (playerChoice == 'scissors') {
-        return playerChoice
-    }  
-
-    else {
-        console.log('Invalid input');
-    }
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
+const buttons = document.querySelectorAll('button');
+const div = document.querySelector('#container');
 
 
-}
 
 function computerSelection () {
     
@@ -23,80 +13,68 @@ function computerSelection () {
     return values[random];
 }
 
-
-function play (playerSelection, computerSelection) {
-    if (playerSelection == 'rock' && computerSelection == 'rock') {
-        return "It's a tie! player picked rock and computer picked rock as well";
-    } 
-    else if (playerSelection == 'paper' && computerSelection == 'paper') {
-        return `It's a tie! player picked paper and computer picked paper as well!`;
-
-    } 
-    else if (playerSelection == 'scissors' && computerSelection == 'scissors')
-     {
-        return `It's a tie! plyaer picked scissors and computer picked scissors`;
+let playerScore = 0;
+let computerScore = 0;
 
 
 
-    } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
-        return `You win! rock beats scissor`;
+rock.addEventListener('click', () => { 
+    let but = rock.textContent;
+    let computerChoice = computerSelection();
 
-    } else if (playerSelection == 'scissors' && computerSelection =='rock') {
-        return "You lose. rock beats scissor";
-
-    } 
-    else if (playerSelection == 'paper' && computerSelection == 'rock') { 
-        return "You win! paper beats rock";
-    } 
-    else if (playerSelection == 'rock' && computerSelection == 'paper') {
-        return `You lose. paper beats rock`;
-    } 
-    else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-        return`You win! scissors beat paper`;
-    } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-        return `You lose. scissors beat paper`;
-    } 
-
-}
+    if (but == computerChoice) {
+        console.log('Tie, you both picked rock');
+        console.log(`Your score is: ${playerScore}, computer is: ${computerScore}`);
+    } else if (computerChoice == 'paper') {
+        console.log('You lose, computer picke paper');
+        console.log(`Your score is: ${playerScore}, computer is: ${computerScore}`);
+        return computerScore++;
+    } else if (computerChoice == 'scissors') {
+        console.log('You win! computer picked scissors');
+        console.log(`Your score is: ${playerScore}, computer is: ${computerScore}`);
+        return playerScore++;
+    }
+   
+})
 
 
-// function gameOneToFive (result) {
-//     let playerScore = 0;
-//     let computerScore = 0;
+paper.addEventListener('click', () => {
+    let but = paper.textContent;
+    let computerChoice = computerSelection();
 
-    
-
-//    for (let i = 0; i <5; i++) {
-//     let a = prompt("What\'s your pick?") 
-//     let b = (play(playerSelection(a), computerSelection()))
-     
-//     if (b.includes("win")) {
-//         playerScore++
-//         console.log(`player: ${playerScore}`);
-//     } else if (b.includes("lose")) {
-//         computerScore++
-//         console.log(`computer: ${computerScore}`);
-//     }
-//     console.log(b);
-
-// }
-
-console.log(`Your score: ${playerScore}; computer: ${computerScore}`);
+    if (but == computerChoice) {
+        console.log('Tie, you both picked paper');
+        console.log(`Your score is: ${playerScore}, computer is: ${computerScore}`);
+    } else if (computerChoice == 'rock') {
+        console.log('You win!, computer picked rock');
+        console.log(`Your score is: ${playerScore}, computer is: ${computerScore}`);
+        return playerScore++;
+    } else if (computerChoice == 'scissors') {
+        console.log('You lose, computer picked scissors');
+        console.log(`Your score is: ${playerScore}, computer is: ${computerScore}`);
+        return computerScore++;
+    }
+})
 
 
-if (playerScore > computerScore) {
-    console.log("Congrats! You win!")
-} else if (playerScore === computerScore) {
-    console.log("It\'s a tie!")
-} else {
-    console.log("Too bad, computer was better than you. Coz you suck")
-}
+scissors.addEventListener('click', () => {
+    let but = scissors.textContent;
+    let computerChoice = computerSelection();
 
+    if (but == computerChoice) {
+        console.log('Tie, you both picked scissors');
+        console.log(`Your score is: ${playerScore}, computer is: ${computerScore}`);
+    } else if (computerChoice == 'paper') {
+        console.log('You win! computer picked paper');
+        console.log(`Your score is: ${playerScore}, computer is: ${computerScore}`);
+        return playerScore++;
+    } else if (computerChoice == 'rock') {
+        console.log('You lose, computer picked rock');
+        console.log(`Your score is: ${playerScore}, computer is: ${computerScore}`);
+        return computerScore++;
+    }
+})
 
-    
-}
-
-gameOneToFive();
 
 
 
