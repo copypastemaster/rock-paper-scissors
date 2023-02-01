@@ -165,7 +165,7 @@ function play () {
     reset.addEventListener('click', () => {
         playerScore = 0;
         computerScore = 0;
-        scoreContainer.textContent = '';
+        scoreContainer.textContent = 'pick';
     })
 }
 
